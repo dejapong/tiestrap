@@ -1,15 +1,8 @@
-import { ADD_ARTICLE } from '../constants/action-types';
+import { combineReducers } from 'redux';
+import nodes from "./nodes";
 
-const initialState = {
-  articles: []
-};
+const ponyApp = combineReducers({
+    nodes
+})
 
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_ARTICLE:
-      return { ...state, articles: [...state.articles, action.payload] };
-    default:
-      return state;
-  }
-};
-export default rootReducer;
+export default ponyApp;
